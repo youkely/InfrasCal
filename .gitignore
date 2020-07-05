@@ -1,0 +1,10 @@
+
+\.idea/
+
+cmake-build-debug/
+
+cmake-build-release/
+
+data/demo/results/
+
+build/

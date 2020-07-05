@@ -1,0 +1,28 @@
+# Config file for the INFRASCAL package
+# This adds INFRASCAL IMPORTED targets
+#
+# Usage example:
+# 
+#   find_package(INFRASCAL)
+#   add_executable(foo foo.cpp)
+#   target_link_libraries(foo INFRASCALTargets)
+#
+# for a list of possible targets see the file
+# INFRASCALTargets.cmake in the same folder as this file
+
+# todo: implement a mechanism for find_dependency scripts to work
+#include(CMakeFindDependencyMacro)
+#find_dependency(Gflags)
+#find_dependency(Glog)
+#find_dependency(OpenCV)
+#find_dependency(Ceres)
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET INFRASCAL)
+  include("${CMAKE_CURRENT_LIST_DIR}/INFRASCALTargets.cmake")
+endif()
+
+# @PACKAGE_INIT@
+
+check_required_components(INFRASCAL)
+
