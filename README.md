@@ -9,7 +9,7 @@ This C++ library supports the following tasks:
 1. Extrinsic infrastructure-based calibration of a multi-camera rig
 2. Intrinsic and extrinsic infrastructure-based calibration of a multi-camera rig
 
-The following three camera models are supported in this library:
+The following two camera models are supported in this library:
 * Pinhole camera model with radial and tangential distortion
 * Equidistant fish-eye model (J. Kannala, and S. Brandt, A Generic Camera Model and Calibration Method for Conventional, Wide-Angle, and Fish-Eye Lenses, PAMI 2006)
 
@@ -138,3 +138,5 @@ Go to the source folder. To see all allowed options for each executable, use the
         -v --camera-model pinhole-radtan --save
 
    The camera-model parameter takes one of the following three values: pinhole, and kannala-brandt.
+   
+   The calibration mode takes one of the following options: InRaSU(default, corresponds to Inf+1DR+RA in the ECCV2020 paper), In(Inf+K), InRI(Inf+K+RI), InRa(Inf+RD), InRaS(Inf+RD+RA)
