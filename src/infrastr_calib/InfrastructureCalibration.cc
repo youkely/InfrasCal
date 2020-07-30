@@ -672,7 +672,7 @@ InfrastructureCalibration::writeToColmap(const std::string& filename) {
             Eigen::Matrix3d R_world_cam = Eigen::Matrix3d(T_world_cam.block<3,3>(0,0));
             Eigen::Quaterniond q_world_cam = Eigen::Quaterniond(R_world_cam);
 
-            file_images <<count <<" "
+            file_images <<i*m_cameras.size()+cameraId <<" "
                         <<q_world_cam.w()<<" "
                         <<q_world_cam.x()<<" "
                         <<q_world_cam.y()<<" "
@@ -681,12 +681,16 @@ InfrastructureCalibration::writeToColmap(const std::string& filename) {
                         <<T_world_cam(1,3)<<" "
                         <<T_world_cam(2,3)<<" "
                         <<cameraId<<" "
-                        <<count
+                        <<i*m_cameras.size()+cameraId
                         <<std::endl;
             for (size_t k = 0; k < frame->features2D().size(); ++k)
             {
                 Point2DFeaturePtr &feature2D = frame->features2D().at(k);
-                file_images <<feature2D->keypoint().pt.x<<" "<<feature2D->keypoint().pt.y<<" -1 ";
+                if (feature2D->feature3D().get() == 0)
+                    file_images <<feature2D->keypoint().pt.x<<" "<<feature2D->keypoint().pt.y<<" -1 ";
+                else
+                    file_images <<feature2D->keypoint().pt.x<<" "<<feature2D->keypoint().pt.y<<" "<<
+                    feature2D->feature3D()->attributes()<<" ";
             }
             file_images << std::endl;
             count++;
@@ -1112,6 +1116,7 @@ InfrastructureCalibration::estimateCameraPose(uint64_t timestamp,
         {
             feature3D = boost::make_shared<Point3DFeature>();
             feature3D->point() = p3D->point();
+            feature3D->attributes() = p3D->attributes();
 
             m_feature3DMap.insert(std::make_pair(p3D.get(), feature3D));
         }

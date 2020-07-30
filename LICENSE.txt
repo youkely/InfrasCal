@@ -1,8 +1,8 @@
 InfrasCal: Automatic Infrastructure-based Intrinsic and Extrinsic Calibration of a Multi-camera System
 Copyright (c) 2020 Yukai Lin
 
-This software is licensed under CC-BY-SA. For more information, visit
-http://http://creativecommons.org/licenses/by-sa/2.0/
+This software is licensed under CC-BY-SA 4.0. For more information, visit
+https://creativecommons.org/licenses/by-sa/4.0/
 
 If you use this software for an academic publication, please cite this paper:
 Yukai Lin, Viktor Larsson, Marcel Geppert, Zuzana Kukelova, Marc Pollefeys, Torsten Sattler,

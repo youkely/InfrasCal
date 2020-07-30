@@ -679,7 +679,7 @@ SparseGraph::readFromColmap(const std::string& mapName, const std::string& datab
 
         feature3DMap[point3D_id] = boost::make_shared<Point3DFeature>();
         Point3DFeaturePtr& point3dfeature = feature3DMap[point3D_id];
-
+        point3dfeature->attributes() = point3D_id;
         // XYZ
         std::getline(line_stream, item, ' ');
         point3dfeature->point()[0] = boost::lexical_cast<double>(item);
