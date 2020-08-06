@@ -137,6 +137,6 @@ Go to the source folder. To see all allowed options for each executable, use the
         --vocab ./data/vocabulary/sift128.bin \
         -v --camera-model pinhole-radtan --save
 
-   The camera-model parameter takes one of the following three values: pinhole, and kannala-brandt.
+   The camera-model parameter takes one of the following two values: pinhole-radtan, and pinhole-equi(kannala-brandt).
    
    The calibration mode takes one of the following options: InRaSU(default, corresponds to Inf+1DR+RA in the ECCV2020 paper), In(Inf+K), InRI(Inf+K+RI), InRa(Inf+RD), InRaS(Inf+RD+RA)
