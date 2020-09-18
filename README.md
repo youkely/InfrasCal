@@ -18,7 +18,7 @@ The infrastructure-based calibration runs in near real-time, and is strongly rec
 The workings of the library are described in the three papers:
 
         Yukai Lin, Viktor Larsson, Marcel Geppert, Zuzana Kukelova, Marc Pollefeys, Torsten Sattler,
-        Infrastructure-based Multi-Camera Calibration using Radial Projections, accepted on ECCV2020.
+        Infrastructure-based Multi-Camera Calibration using Radial Projections, ECCV 2020.
     
         Lionel Heng, Mathias Bürki, Gim Hee Lee, Paul Furgale, Roland Siegwart, and Marc Pollefeys,
         Infrastructure-Based Calibration of a Multi-Camera Rig,
@@ -28,7 +28,17 @@ The workings of the library are described in the three papers:
         Leveraging Image-based Localization for Infrastructure-based Calibration of a Multi-camera Rig,
         Journal of Field Robotics (JFR), 2015.
 
-If you use this library in an academic publication, please cite at least one of the following papers depending on what you use the library for.
+If you use this library in an academic publication, please cite at least the following paper:
+```
+@InProceedings{Lin2020ECCV,
+    author = {Yukai Lin and Viktor Larsson and Marcel Geppert and Zuzana Kukelova and Marc Pollefeys and Torsten Sattler},
+    title = {{Infrastructure-based Multi-Camera Calibration using Radial Projections}},
+    booktitle = {European Conference on Computer Vision (ECCV)},
+    year = {2020},
+}
+```
+
+Depending on which parts of the library you use, please cite the appropriate papers from the list above.
 
 #### Acknowledgements ####
 
